@@ -33,4 +33,34 @@ yarn install electron --save-dev
 
 2. 在项目根目录下新增main.js文件
 
-   
+   main.js是React集成Electron的关键文件,具体代码：https://github.com/UCliwenbin/Electron-React-Demo/blob/main/src/main.js
+
+3. 修改项目的package.json
+   + homepage属性
+   + 新增main属性
+   + 在scripts里新增脚本启动命令
+
+​	具体配置看代码：https://github.com/UCliwenbin/Electron-React-Demo/blob/main/package.json
+
+## 3.打包Electron为桌面执行文件
+
+​	这里打包使用的是官方推荐的`electron-forge`,具体使用可以参考以下文档：
+
+1. https://www.electronforge.io/
+2. [electron-forge打包教程](https://www.wangt.cc/2021/07/electron%E6%95%99%E7%A8%8B%EF%BC%883%EF%BC%89%E5%A6%82%E4%BD%95%E6%89%93%E5%8C%85-electron-%E7%A8%8B%E5%BA%8F%EF%BC%9Aelectron-forge-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/)
+
+​	直接使用`electron-forge`脚手架工具来进行创建App，相关脚手架工具：
+
+```shell
+# 执行脚手架工具
+yarn create electron-app my-app
+
+# 执行app
+cd my-app
+yarn start
+
+```
+
+​	具体配置可以查看：https://github.com/UCliwenbin/Electron-React-Demo/blob/main/package.json
+
+​	文档中使用了[electron-packager](https://www.npmjs.com/package/electron-packager)工具进行打包,这个我没有用，所以不太确定是否好用。
